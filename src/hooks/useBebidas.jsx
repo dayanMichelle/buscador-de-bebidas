@@ -5,4 +5,4 @@ import BebidasContext from "../context/BebidasProvider"
 const useBebidas = () => {
     return useContext(BebidasContext)
 }
-export default useCategorias
+export default useBebidas

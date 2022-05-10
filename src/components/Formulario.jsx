@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button, Form, Row, Col, Alert } from "react-bootstrap";
 import useCategorias from "../hooks/useCategorias";
+import useBebidas from "../hooks/useBebidas";
 const Formulario = () => {
   const [busqueda, setBusqueda] = useState({
     nombre: "",
@@ -14,10 +15,12 @@ const Formulario = () => {
         return
     }
     setError('');
+    consultarBebidas(busqueda)
   }
 
   const { categorias } = useCategorias();
-  console.log(categorias);
+  const { consultarBebidas} = useBebidas()
+
   return (
     <Form onSubmit={handleSubmit}>
         {error && <Alert className="my-5 text-center" variant="danger">{error}</Alert>}
